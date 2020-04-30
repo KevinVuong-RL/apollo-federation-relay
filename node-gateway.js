@@ -1,5 +1,5 @@
 const { ApolloGateway, LocalGraphQLDataSource } = require('@apollo/gateway');
-const { gql } = require('apollo-server');
+const { gql } = require('apollo-server-lambda');
 const { parse, visit, graphqlSync } = require('graphql');
 const { buildFederatedSchema } = require('@apollo/federation');
 const GraphQLNode = require('./graphql-node');
