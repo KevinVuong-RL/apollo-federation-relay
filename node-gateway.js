@@ -25,6 +25,12 @@ class RootModule {
    * @param {Set<string>} nodeTypes Supported typenames
    */
   constructor(nodeTypes) {
+    this.typeDefs = gql`
+      type Query {
+        node(id: ID!): Node
+      }
+    `;
+
     this.resolvers = {
       Query: {
         node(_, { id }) {
@@ -39,11 +45,11 @@ class RootModule {
     };
   }
 
-  typeDefs = gql`
+/*  typeDefs = gql`
     type Query {
       node(id: ID!): Node
     }
-  `;
+  `;*/
 }
 
 /**
